@@ -1,0 +1,27 @@
+name: Umar Python Workflow
+
+on:
+  push:
+    branches: [ "main" ]  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run Python script
+        run: python main.py
+
+      - name: List files in repository
+        run: ls -la
+
+      - name:  Lab 2 Completed Successfully
+        run: echo "Lab 2 completed successfully"
